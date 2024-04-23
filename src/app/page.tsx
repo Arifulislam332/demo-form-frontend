@@ -1,15 +1,9 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { useAuth0 } from "@auth0/auth0-react";
+import Header from "@/components/Header";
 
 const HomePage = () => {
-  const { loginWithRedirect } = useAuth0();
   return (
     <div>
-      <Button onClick={async () => loginWithRedirect()} size="lg">
-        Click here
-      </Button>
+      <Header />
     </div>
   );
 };
