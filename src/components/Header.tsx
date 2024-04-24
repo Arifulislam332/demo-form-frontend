@@ -8,21 +8,25 @@ import { Button } from "./ui/button";
 const Header = () => {
   const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return (
-    <header className="w-full bg-pink-500 text-white border-b-2 py-5 flex items-center">
+    <header className="w-full bg-pink-500 text-white border-b-2 h-[82px] flex items-center">
       <div className="flex items-center justify-between container mx-auto">
         <Link href="/" className="font-bold text-2xl">
           Home
         </Link>
+
         <div>
           {isAuthenticated ? (
-            <span className="flex items-center gap-2">
-              <Avatar>
-                <AvatarImage src={user?.picture} />
-                <AvatarFallback>{user?.name?.charAt(0)}</AvatarFallback>
-              </Avatar>
+            <span className="flex items-center gap-3">
+              <Link href="/user-profile">
+                <Avatar className="bg-pink-500">
+                  <AvatarImage src={user?.picture} />
+                  <AvatarFallback>{user?.name?.charAt(0)}</AvatarFallback>
+                </Avatar>
+              </Link>
 
               <Button
                 onClick={() => logout()}
+                size="sm"
                 variant="ghost"
                 className="font-bold hover:bg-pink-500"
               >

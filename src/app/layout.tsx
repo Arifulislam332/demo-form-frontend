@@ -1,12 +1,14 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import MyAuth0Provider from "@/providers/MyAuth0Provider";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Default Form",
-  description: "login user form",
+  title: "Dish Dash",
+  description: "Online food order shop",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -14,7 +16,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <MyAuth0Provider>
       <html lang="en">
         <body className={nunito.className}>
-          <main>{children}</main>
+          <main className="flex flex-col min-h-screen">
+            <Header />
+            <div className="flex-1">{children}</div>
+          </main>
+          <Footer />
         </body>
       </html>
     </MyAuth0Provider>
