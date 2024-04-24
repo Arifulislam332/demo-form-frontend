@@ -14,7 +14,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <MyAuth0Provider>
-      <html lang="en">
+      <html lang="en" className="scroll-smooth">
         <body className={nunito.className}>
           <main className="flex flex-col min-h-screen">
             <Header />
