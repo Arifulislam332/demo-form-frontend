@@ -35,7 +35,7 @@ const Header = () => {
             </span>
           ) : (
             <Button
-              onClick={() => loginWithRedirect()}
+              onClick={async () => loginWithRedirect()}
               variant="ghost"
               size="lg"
               className="font-bold hover:bg-pink-500"
